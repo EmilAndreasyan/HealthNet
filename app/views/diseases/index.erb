@@ -1,0 +1,18 @@
+<h1>Choose type of disease you want to learn more about</h1>
+
+<h3>Create a new <a href="/diseases/new">disease</a></h3>
+<% @diseases.each do |disease| %>
+<ul>
+  <li><a href="/diseases/<%= disease.id %>"><%= disease.name %></a></li>
+  <%# edit %>
+  <form action="/diseases/<%= disease.id %>/edit" method="POST">
+  <input type="hidden" name="_method" value="GET">
+  <input type="submit" value="Edit disease" class="edit">
+  </form>
+  <%# delete %>
+  <form action="/diseases/<%= disease.id %>" method="POST">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete disease" class="delete">
+  </form>
+</ul>
+<% end %>

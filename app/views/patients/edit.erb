@@ -1,0 +1,23 @@
+<h1>Here you can update data for any patient</h1>
+<form action="/patients/<%= @patient.id %>" method="POST">
+<input type="hidden" name="_method" value="patch">
+<label for="name">Patient full name: </label>
+<input type="text" name="user[patient][][name]"><br>
+<label for="gender">Gender: </label><br>
+<label for="male">Male: </label>
+<input type="radio" value="male" name="user[patient][][gender]"><br>
+<label for="female">Female: </label>
+<input type="radio" value="female" name="user[patient][][gender]"><br>
+<label for="other">Other: </label><br>
+<label for="age">Age: </label>
+<input type="number" min="0" max="100" name="user[patient][][age]"><br>
+<label for="condition">Condition: </label><br>
+<label for="mild">Mild: </label>
+<input type="radio" value="mild" name="user[patient][][condition]"><br>
+<label for="moderate">Moderate: </label>
+<input type="radio" value="moderate" name="user[patient][][condition]"><br>
+<label for="severe">Severe: </label>
+<input type="radio" value="severe" name="user[patient][][condition]"><br>
+<input type="submit" value="Update!" class="edit">
+</form>
+<%= @error %>

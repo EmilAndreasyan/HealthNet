@@ -1,0 +1,15 @@
+<h1>Below is the data for <%= @patient.name %></h1>
+<ul>
+<li>Patient name: <%= @patient.name %></li>
+<li>Gender: <%= @patient.gender %></li>
+<li>Age: <%= @patient.age %></li>
+<li>Condition: <%= @patient.condition %></li>
+<li>Doctor's name: <%= @patient.user.first_name %> <%= @patient.user.last_name %></li>
+<%# while drugs belong_to patient, @patient has drugs array %>
+<% @patient.drugs.each do |drug| %>
+<li>Medicine taken: <%= drug.name %> <%= drug.dosage %></li>
+<% end %>
+</ul>
+
+<p>Return to <a href="/patients">all patients</a></p>
+<p><a href="/patients/<%= @patient.id %>/edit">Edit</a> patient <%= @patient.name %></p>

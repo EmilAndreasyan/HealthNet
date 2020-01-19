@@ -1,0 +1,17 @@
+<h1>Here are all registered drugs against various diseases</h1>
+
+<h3>Create a new <a href="/drugs/new">medicine</a></h3>
+
+<% @drugs.each.with_index(1) do |drug, index| %>
+<ul>
+  <li><%= index %>. <a href="/drugs/<%= drug.id %>"><%= drug.name %></a></li>
+  <form action="/drugs/<%= drug.id %>/edit" method="POST">
+  <input type="hidden" name="_method" value="GET">
+  <input type="submit" value="Edit drug" class="edit">
+  </form>
+  <form action="/drugs/<%= drug.id %>" method="POST">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete drug" class="delete">
+  </form>
+</ul>
+<% end.uniq %>

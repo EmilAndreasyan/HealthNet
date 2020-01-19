@@ -1,0 +1,10 @@
+<h1>Edit a disease</h1>
+
+<form action="/diseases/<%= @disease.id%>" method="post">
+<input type="hidden" name="_method" value="patch">
+<label for="name">Illness name: </label>
+<input type="text" name="disease[name]"><br>
+<label for="symptoms">Describe symptoms: </label>
+<textarea name="disease[symptoms]" id="symptoms" cols="30" rows="10"></textarea><br>
+<input type="submit" value="Edit a disease!" class="edit">
+</form>

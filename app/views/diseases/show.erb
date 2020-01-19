@@ -1,0 +1,8 @@
+<h1>Below you can find information about <%= @disease.name%></h1>
+<ul>
+<li>Disease name: <%= @disease.name%></li>
+<li>Main symptoms: <%= @disease.symptoms%></li>
+</ul>
+
+<p>Return to <a href="/diseases">all</a> diseases</p>
+<p><a href="/diseases/<%= @disease.id%>/edit">Edit </a><%= @disease.name%></p>

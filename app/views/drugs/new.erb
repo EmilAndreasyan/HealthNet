@@ -1,0 +1,10 @@
+<h1>Create a new drug</h1>
+<form action="/drugs" method="POST">
+<label for="name">Medicine name: </label>
+<input type="text" name="drug[name]"><br>
+<label for="dosage">Medicine dosage: </label>
+<input type="text" name="drug[dosage]"><br>
+<input type="submit" value="Create a new medicine!" class="edit">
+</form>
+
+<%= @error if params.empty?%>

@@ -1,0 +1,12 @@
+<h1>Describe a diseases you would like to create</h1>
+
+<form action="/diseases" method="POST">
+<label for="name">Name of illness: </label>
+<input type="text" name="disease[name]"><br>
+<label for="symptoms">Main symptoms: </label>
+<textarea name="disease[symptoms]" cols="30" rows="10"></textarea><br>
+<%# <label for="image">Image of drug</label>
+<input type="file" name="disease[image]"><br> %>
+<input type="submit" value="Create a new disease" class="edit">
+</form>
+<%= @error %>

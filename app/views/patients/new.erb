@@ -1,0 +1,26 @@
+<%# problem creating nested hash %>
+<h1>Create a new patient</h1>
+<%= @error %>
+<form action="/patients" method="POST">
+<label for="name">Patient Name: </label>
+<input type="text" name="user[patient][][name]"><br>
+<label for="gender">Gender: </label><br>
+<%# <input type="text" name="user[patient][][gender]"><br> %>
+<label for="male">Male: </label>
+<input type="radio" value="male" name="user[patient][][gender]"><br>
+<label for="female">Female: </label>
+<input type="radio" value="female" name="user[patient][][gender]"><br>
+<label for="other">Other: </label>
+<input type="radio" value="other" name="user[patient][][gender]"><br>
+<label for="age">Age: </label>
+<input type="number" min="0" max="100" name="user[patient][][age]"><br>
+<label for="condition">Condition: </label><br>
+<label for="mild">Mild: </label>
+<input type="radio" value="mild" name="user[patient][][condition]"><br>
+<label for="moderate">Moderate: </label>
+<input type="radio" value="moderate" name="user[patient][][condition]"><br>
+<label for="severe">Severe: </label>
+<input type="radio" value="severe" name="user[patient][][condition]"><br>
+<input type="submit" value="Create a patient!" class="edit">
+</form>
+

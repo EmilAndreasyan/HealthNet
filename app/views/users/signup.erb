@@ -1,0 +1,14 @@
+<h1>Please, fill the form below to become a registered user</h1>
+<p><%= @error %></p>
+<form action="/signup" method="POST">
+<label for="first_name">First Name: </label>
+<input type="text" name="user[first_name]" placeholder="Enter your first name"><br>
+<label for="last_name">Last Name: </label>
+<input type="text" name="user[last_name]" placeholder="Enter your last name"><br>
+<label for="email">Email: </label>
+<input type="email" name="user[email]" placeholder="Email"><br>
+<label for="password_digest">Password: </label>
+<input type="password" name="user[password_digest]" placeholder="create a strong password"><br>
+<input type="submit" value="Sign me up!">
+</form><br>
+<h3>Or <a href="/login">Log in</a></h3>

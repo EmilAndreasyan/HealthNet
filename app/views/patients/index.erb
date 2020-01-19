@@ -1,0 +1,20 @@
+<h1>Here you can find all your patients</h1>
+<p><a href="/patients/new">Add your patient</a></p>
+<ul>
+<h3>Below is the list of all patients available in our database, you can edit and/or delete only those of yours though!</h3>
+<% @patients.each.with_index(1) do |patient, index| %>
+  <li><%= index %>. <a href="/patients/<%= patient.id %>"><%= patient.name %></a>, <%= patient.age %></li>
+    <form action="/patients/<%= patient.id %>/edit" method="POST">
+    <input type="hidden" name="_method" value="get">
+    <% if current_user == patient.user %>
+    <input type="submit" value="Edit patient" class="edit">
+    <% end %>
+  </form>
+  <form action="/patients/<%= patient.id %>" method="POST">
+    <input type="hidden" name="_method" value="delete">
+    <% if current_user == patient.user %>
+    <input type="submit" value="Delete patient" class="delete">
+    <% end %>
+  </form>
+<% end %>
+</ul>
