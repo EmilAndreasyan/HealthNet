@@ -1,4 +1,6 @@
 <h1>Have an account already? Log in!</h1>
+<p><%= @error %></p>
+
 <form action="/login" method="POST">
 <label for="email">Email: </label>
 <input type="email" name="user[email]"><br>

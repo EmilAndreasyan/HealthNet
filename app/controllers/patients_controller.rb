@@ -12,14 +12,15 @@ class PatientsController < ApplicationController
     # Create
     get '/patients/new' do
         require_login
-        # @diseases = Disease.all
         erb :'patients/new'         
     end
 
     post '/patients' do
+        # binding.pry
         @patient = current_user.patients.build(params[:user][:patient][0])
         # @patient = Patient.new(params[:user][:patient][0])
-        if @patient.save
+        if !params[:user][:patient][0].empty?
+            @patient.save
             redirect "/patients/#{@patient.id}"
         else
             @error = "All fields must be filled out"

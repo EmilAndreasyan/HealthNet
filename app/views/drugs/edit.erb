@@ -8,6 +8,6 @@
 <input type="text" name="drug[dosage]"><br>
 <input type="submit" value="Edit!" class="edit">
 </form>
-<%= @error if params.empty?%>
+<%= @error if params.errors.any?%>
 
 <h3>Or return to <a href="/drugs">main</a> page</h3>

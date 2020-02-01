@@ -3,22 +3,32 @@ class SessionsController < ApplicationController
         erb :'users/login'
     end
 
+    # post '/login' do
+    #     user = User.new(params[:user])
+    #     if params[:user].empty?
+    #         @error = "All fields are required*"
+    #         redirect '/login'
+    #     elsif
+    #         user = User.find_by(params[:user])
+    #         session[:user_id] = user.id
+    #         redirect "/users/#{user.id}/index"
+    #     else
+    #         @error = "Account not found, try again or register!"
+    #         redirect "/login" 
+    #     end
+    # end
+
     post '/login' do
-        user = User.new(params[:user])
-        if params[:user].empty?
-            @error = "All fields are required*"
-            redirect '/login'
-        # elsif   
-        #     @error = "Account not found, try again or register!" 
-        #     redirect "/login"
-        elsif
-            #user && user.authenticate(password_digest)
-            user = User.find_by(params[:user])
+        user = User.find_by(params[:user])
+        if params.empty?
+            @error = "all fields are required"
+            redirect "/login"
+        elsif user
             session[:user_id] = user.id
             redirect "/users/#{user.id}/index"
         else
-            @error = "Account not found"
-            redirect "/login" 
+            @error = "Account not found, try again or register!"
+            redirect "/login"
         end
     end
 

@@ -19,6 +19,7 @@ disease has many drugs, drugs has many diseases
 - how to use Active record build method?
 - how to avoid duplication in creating database?
 - how to use password authentication
+- @error message
 
 views/patient/new.erb
 <label for="type_of_disease">Type of disease: </label>

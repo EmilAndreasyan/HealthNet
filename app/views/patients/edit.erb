@@ -18,6 +18,8 @@
 <input type="radio" value="moderate" name="user[patient][][condition]"><br>
 <label for="severe">Severe: </label>
 <input type="radio" value="severe" name="user[patient][][condition]"><br>
+<% if current_user == @patient.user %>
 <input type="submit" value="Update!" class="edit">
+<% end %>
 </form>
 <%= @error %>

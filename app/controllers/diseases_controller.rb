@@ -33,7 +33,7 @@ class DiseasesController < ApplicationController
         @disease = Disease.find(params[:id])
         if !params[:disease].empty?
             @disease.update(params[:disease])
-            redirect "/diseases/#{params[:id]}"
+            redirect "/diseases/#{@disease.id}"
         else
             redirect "/diseases/edit"
         end

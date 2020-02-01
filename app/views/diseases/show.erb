@@ -2,6 +2,12 @@
 <ul>
 <li>Disease name: <%= @disease.name%></li>
 <li>Main symptoms: <%= @disease.symptoms%></li>
+<li>Total number of all patients having <%= @disease.name%>: <%= @disease.patients.count %></li>
+<li>List of all patients with mentioned disease: </li>
+<% @disease.patients.each do |patient| %>
+<li><%= patient.name %></li>
+<% end %>
+
 </ul>
 
 <p>Return to <a href="/diseases">all</a> diseases</p>
