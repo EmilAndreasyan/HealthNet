@@ -19,13 +19,15 @@ class UsersController < ApplicationController
     # end
 
     post '/signup' do
+        #binding.pry
         user = User.new(params[:user])
-        if user.first_name.empty? || user.last_name.empty? || user.password_digest.empty? || user.email.empty?
-           @error = "all feilds are required" 
+        if user.first_name.empty? || user.last_name.empty? || user.password.empty? || user.email.empty?
+           @error = "all feilds are required*" 
+           erb :'users/signup'
         elsif 
             User.find_by(email: user.email)
-            @error = "account already exists, try to login instead"
-            redirect "/signup"
+            @error = "account already exists, try to login instead*"
+            erb :'users/signup'
         else
             user.save
             session[:user_id] = user.id

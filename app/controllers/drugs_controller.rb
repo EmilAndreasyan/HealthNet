@@ -15,7 +15,7 @@ class DrugsController < ApplicationController
             redirect "/drugs/#{@drug.id}"
         else
             @error = "All field must be filled out"
-            redirect "/drugs/new"
+            erb :'drugs/new'
         end
     end
 
@@ -36,7 +36,7 @@ class DrugsController < ApplicationController
             redirect "/drugs/#{params[:id]}"
         else
             @error = "Fill all the fields"
-            redirect "/drugs/#{@drug.id}/edit"
+            erb :'drugs/edit'
         end
     end
 

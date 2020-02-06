@@ -1,4 +1,5 @@
 <h1>Here you can update data for any patient</h1>
+<p class="error"><%= @error %></p>
 <form action="/patients/<%= @patient.id %>" method="POST">
 <input type="hidden" name="_method" value="patch">
 <label for="name">Patient full name: </label>
@@ -20,6 +21,7 @@
 <input type="radio" value="severe" name="user[patient][][condition]"><br>
 <% if current_user == @patient.user %>
 <input type="submit" value="Update!" class="edit">
+<% else %>
+<p>You can view, but cannot edit this patient, while he/she belongs to <%= @patient.user.first_name %> <%= @patient.user.last_name%></p>
 <% end %>
 </form>
-<%= @error %>

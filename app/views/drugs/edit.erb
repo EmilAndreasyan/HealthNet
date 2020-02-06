@@ -1,5 +1,7 @@
 <h1>Here you can edit <%= @drug.name%></h1>
 
+<p class="error"><%= @error %></p>
+
 <form action="/drugs/<%= @drug.id %>" method="POST">
 <input type="hidden" name="_method" value="patch">
 <label for="name">Drug name: </label>
@@ -8,6 +10,5 @@
 <input type="text" name="drug[dosage]"><br>
 <input type="submit" value="Edit!" class="edit">
 </form>
-<%= @error if params.errors.any?%>
 
 <h3>Or return to <a href="/drugs">main</a> page</h3>

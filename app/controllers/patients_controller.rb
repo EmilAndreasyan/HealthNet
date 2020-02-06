@@ -24,7 +24,7 @@ class PatientsController < ApplicationController
             redirect "/patients/#{@patient.id}"
         else
             @error = "All fields must be filled out"
-            redirect "/patients/new"
+            erb :'patients/new'
         end
     end
 
@@ -51,7 +51,7 @@ class PatientsController < ApplicationController
             redirect "/patients/#{@patient.id}"
         else
             @error = "Try again"
-            redirect "/patients/#{@patient.id}/edit"
+            erb :'patients/edit'
         end
     end
 

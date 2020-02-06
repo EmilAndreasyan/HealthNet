@@ -43,7 +43,8 @@ class ApplicationController < Sinatra::Base
             if user && user.authenticate(password)
                 session[:user_id] = user.id
             else
-                redirect '/login'
+                @error = "accont not found, check email and password"
+                erb :'users/login'
             end
             session[:email] = email
         end

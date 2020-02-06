@@ -18,17 +18,32 @@ class SessionsController < ApplicationController
     #     end
     # end
 
+    # post '/login' do
+    #     user = User.find_by(params[:user])
+    #     if params.empty?
+    #         @error = "all fields are required"
+    #         erb :'users/login'
+    #     elsif user
+    #         session[:user_id] = user.id
+    #         redirect "/users/#{user.id}/index"
+    #     else
+    #         @error = "Account not found, try again or register!"
+    #         erb :'users/login'
+    #     end
+    # end
+
     post '/login' do
-        user = User.find_by(params[:user])
-        if params.empty?
-            @error = "all fields are required"
-            redirect "/login"
-        elsif user
+        user = User.find_by(email: params[:user][:email])
+        if params[:user][:email].empty? || params[:user][:password].empty?
+            @error = "Email and password fields cannot be blank*"
+            erb :'users/login' 
+        elsif user && user.authenticate(params[:user][:password])
+            user.save
             session[:user_id] = user.id
             redirect "/users/#{user.id}/index"
         else
-            @error = "Account not found, try again or register!"
-            redirect "/login"
+            @error = "Incorrect email or password*"
+            erb :'users/login'
         end
     end
 

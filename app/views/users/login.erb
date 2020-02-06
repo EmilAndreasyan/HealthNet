@@ -1,11 +1,10 @@
 <h1>Have an account already? Log in!</h1>
-<p><%= @error %></p>
-
+<p class="error"><%= @error %></p>
 <form action="/login" method="POST">
 <label for="email">Email: </label>
 <input type="email" name="user[email]"><br>
 <label for="password">Password: </label>
-<input type="password" name="user[password_digest]"><br>
+<input type="password" name="user[password]"><br>
 <input type="submit" value="Log In" class="login">
 </form>
 

@@ -8,7 +8,8 @@ body {
 .wrapper {
     width: 90%;
     margin: auto;
-    background-image: url('/public/images/Health-Insurance-Quotes-1920x1080.jpg');
+    background-image: url(/public/images/Health-Insurance-Quotes-1920x1080.jpg);
+    background-size: auto;
     background-repeat: no-repeat;
 }
 .header {
@@ -22,7 +23,7 @@ body {
 }
 a {
     text-decoration: none;
-    color: #8793FF;
+    color: green;
 }
 a:hover {
     cursor: pointer;
@@ -40,6 +41,7 @@ input {
 }
 .delete {
     background-color: cadetblue;
+    font-size: 10px;
     margin: 5px;
     padding: 5px;
     border-radius: 5%;
@@ -48,8 +50,12 @@ input {
 
 .edit .login {
     background-color: royalblue;
+    font-size: 10px;
     margin: 5px;
     padding: 5px;
     border-radius: 5%;
     color: cornsilk;
+}
+p .error {
+    color: red;
 }

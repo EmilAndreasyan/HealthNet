@@ -4,9 +4,9 @@ Patient.destroy_all
 Disease.destroy_all
 Drug.destroy_all
 
-@user1 = User.create(first_name: "Tom", last_name: "Cruize", email: "tomcruize@gmail.com", password_digest: "tom")
-@user2 = User.create(first_name: "John", last_name: "Smith", email: "johnsmith@gmail.com", password_digest: "john")
-@user3 = User.create(first_name: "Adam", last_name: "Jones", email: "adamjones@gmail.com", password_digest: "adam")
+@user1 = User.create(first_name: "Tom", last_name: "Cruize", email: "tomcruize@gmail.com", password: "tom")
+@user2 = User.create(first_name: "John", last_name: "Smith", email: "johnsmith@gmail.com", password: "john")
+@user3 = User.create(first_name: "Adam", last_name: "Jones", email: "adamjones@gmail.com", password: "adam")
 
 @chf = Disease.create(name: "Chronic Heart Failure", symptoms: "Shortness of breath, fatigue and weakness, rapid or irregular heartbeat")
 @diabetes = Disease.create(name: "Type 2 diabetes", symptoms: "Frequent urination, increased thirst, blurry vision")
